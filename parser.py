@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-for month in range(2000,2020):
+for month in range(1995,2020):
     url_string = "https://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=all&qual=0&type=0&season="
     url_month  = str(month)
     url_string2 = "&month=0&season1="
@@ -25,7 +25,7 @@ for month in range(2000,2020):
 
     FILE.close()
 
-for month2 in range(2000,2020):
+for month2 in range(1995,2020):
     __file2__ = "DATA/"+str(month2)+"_tmp.txt" 
     FILE2 = open(__file2__,mode="r")
 
@@ -35,28 +35,55 @@ for month2 in range(2000,2020):
     all_str = FILE2.readlines()
     ans = []
     
-    for i in range(0,30):
-        idx1 = i*2
-        idx2 = i*2+1
-        str1 = all_str[idx1]
-        str2 = all_str[idx2]
-        str1_len = len(str1)
-        str2_len = len(str2)
-        
-        for k in range(0,50):
-            flag = 0
-            __str__ = ""
-            for j in range(0,str2_len):
-                if(str2[j]=='<' and flag==k): break
-                if(flag==k): __str__=__str__+str2[j]
-                if(str2[j]=='>'): flag = flag +1
-            if(len(__str__)!=0):ans.append(__str__)
+    if(month2>1997):
+        for i in range(0,30):
+            idx1 = i*2
+            idx2 = i*2+1
+            str1 = all_str[idx1]
+            str2 = all_str[idx2]
+            str1_len = len(str1)
+            str2_len = len(str2)
+            
+            for k in range(0,50):
+                flag = 0
+                __str__ = ""
+                for j in range(0,str2_len):
+                    if(str2[j]=='<' and flag==k): break
+                    if(flag==k): __str__=__str__+str2[j]
+                    if(str2[j]=='>'): flag = flag +1
+                if(len(__str__)!=0):ans.append(__str__)
 
-    for i in range(0,30):
-        for j in range(1,24):
-            if(j==1): FILE_ans.write('{:15}'.format(ans[i*24+j]))
-            else: FILE_ans.write('{:8}'.format(ans[i*24+j]))
-        FILE_ans.write("\n")
+        for i in range(0,30):
+            for j in range(1,24):
+                if(j==1): FILE_ans.write('{:15}'.format(ans[i*24+j]))
+                else: FILE_ans.write('{:8}'.format(ans[i*24+j]))
+            FILE_ans.write("\n")
 
-    FILE2.close()
-    FILE_ans.close()
+        FILE2.close()
+        FILE_ans.close()
+    else:
+        for i in range(0,28):
+            idx1 = i*2
+            idx2 = i*2+1
+            str1 = all_str[idx1]
+            str2 = all_str[idx2]
+            str1_len = len(str1)
+            str2_len = len(str2)
+            
+            for k in range(0,50):
+                flag = 0
+                __str__ = ""
+                for j in range(0,str2_len):
+                    if(str2[j]=='<' and flag==k): break
+                    if(flag==k): __str__=__str__+str2[j]
+                    if(str2[j]=='>'): flag = flag +1
+                if(len(__str__)!=0):ans.append(__str__)
+
+        for i in range(0,28):
+            for j in range(1,24):
+                if(j==1): FILE_ans.write('{:15}'.format(ans[i*24+j]))
+                else: FILE_ans.write('{:8}'.format(ans[i*24+j]))
+            FILE_ans.write("\n")
+
+        FILE2.close()
+        FILE_ans.close()
