@@ -1,6 +1,7 @@
 # parser
 The repo is parser used by Python to parse FanGraphs
 
+組員們麻煩不要理下面東西, [資訊在這個連結  點我點我](https://github.com/Engineering-Statistics-Final-Project/FanGraphs-parser/blob/main/guideline.md)
 
 ## Environment
 
