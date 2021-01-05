@@ -15,6 +15,12 @@ $ pip3 install requests
 $ pip install beautifulsoup4
 ```
 
+* For R:
+
+```shell
+library(readr)
+```
+
 ## Implement
 
 Run:
