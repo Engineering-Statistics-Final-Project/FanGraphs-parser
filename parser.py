@@ -56,7 +56,7 @@ for month2 in range(1995,2020):
         for i in range(0,30):
             for j in range(1,24):
                 if(j==1): FILE_ans.write('{:15}'.format('"'+ans[i*24+j]+'"'))
-                else: FILE_ans.write('{:8}'.format('"'+ans[i*24+j]+'"'))
+                else: FILE_ans.write('{:10}'.format('"'+ans[i*24+j]+'"'))
             FILE_ans.write("\n")
 
         FILE2.close()
@@ -82,7 +82,7 @@ for month2 in range(1995,2020):
         for i in range(0,28):
             for j in range(1,24):
                 if(j==1): FILE_ans.write('{:15}'.format('"'+ans[i*24+j]+'"'))
-                else: FILE_ans.write('{:8}'.format('"'+ans[i*24+j]+'"'))
+                else: FILE_ans.write('{:10}'.format('"'+ans[i*24+j]+'"'))
             FILE_ans.write("\n")
 
         FILE2.close()
